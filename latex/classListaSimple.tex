@@ -1,0 +1,265 @@
+\hypertarget{classListaSimple}{}\doxysection{Lista\+Simple$<$ DATO $>$ Class Template Reference}
+\label{classListaSimple}\index{ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}}
+
+
+Simple\+List class, contains de logic of the list structure.  
+
+
+
+
+{\ttfamily \#include $<$listasimple.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classListaSimple_a55ac543e67671471ce89d9685d8d6103}{Lista\+Simple}} ()
+\item 
+void \mbox{\hyperlink{classListaSimple_a31f8348d8e1d39d7c2abdc49940ea8ab}{insertar}} (DATO)
+\begin{DoxyCompactList}\small\item\em Add node to the list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classListaSimple_a50c459ce1fffffc2a543733b995bcb8a}{esta\+Vacia}} ()
+\begin{DoxyCompactList}\small\item\em Check the list is empty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classListaSimple_a648bf4154e832b3009a15b5da26084e9}{eliminar}} (DATO)
+\begin{DoxyCompactList}\small\item\em Delete node to the list. \end{DoxyCompactList}\item 
+DATO \mbox{\hyperlink{classListaSimple_a7b534c84d6fc5a51c3936c98d6cf1999}{obtener\+Pos}} (int)
+\begin{DoxyCompactList}\small\item\em Get node given a pos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$ $\ast$ \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}}
+\item 
+int \mbox{\hyperlink{classListaSimple_aa28aaacca240ae27ebdda6b12bc72838}{size}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class DATO$>$\newline
+class Lista\+Simple$<$ DATO $>$}
+Simple\+List class, contains de logic of the list structure. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em DATO,list} & data type \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 25 of file listasimple.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classListaSimple_a55ac543e67671471ce89d9685d8d6103}\label{classListaSimple_a55ac543e67671471ce89d9685d8d6103}} 
+\index{ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}!ListaSimple@{ListaSimple}}
+\index{ListaSimple@{ListaSimple}!ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{ListaSimple()}{ListaSimple()}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+\mbox{\hyperlink{classListaSimple}{Lista\+Simple}}$<$ DATO $>$\+::\mbox{\hyperlink{classListaSimple}{Lista\+Simple}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 34 of file listasimple.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34                  \{}
+\DoxyCodeLine{35         \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}} = NULL;}
+\DoxyCodeLine{36     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classListaSimple_a648bf4154e832b3009a15b5da26084e9}\label{classListaSimple_a648bf4154e832b3009a15b5da26084e9}} 
+\index{ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}!eliminar@{eliminar}}
+\index{eliminar@{eliminar}!ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{eliminar()}{eliminar()}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+void \mbox{\hyperlink{classListaSimple}{Lista\+Simple}}$<$ DATO $>$\+::eliminar (\begin{DoxyParamCaption}\item[{DATO}]{\+\_\+dato }\end{DoxyParamCaption})}
+
+
+
+Delete node to the list. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em DATO,list} & data type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+dato,node} & to delete at the list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file listasimple.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75                                           \{}
+\DoxyCodeLine{76     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classListaSimple_a50c459ce1fffffc2a543733b995bcb8a}{estaVacia}}())\{}
+\DoxyCodeLine{77         \textcolor{keywordflow}{if} (\_dato == \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}}-\/>dato) \{}
+\DoxyCodeLine{78             \mbox{\hyperlink{classNodo}{Nodo<DATO>}} * eliminado = \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}};}
+\DoxyCodeLine{79             \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}} = \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}}-\/>siguiente;}
+\DoxyCodeLine{80             eliminado-\/>\mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}} = NULL;}
+\DoxyCodeLine{81             \textcolor{keyword}{delete} eliminado;}
+\DoxyCodeLine{82             \mbox{\hyperlink{classListaSimple_aa28aaacca240ae27ebdda6b12bc72838}{size}} -\/= 1;}
+\DoxyCodeLine{83         \}}
+\DoxyCodeLine{84         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{85             \mbox{\hyperlink{classNodo}{Nodo<DATO>}} * nodo\_anterior = \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}};}
+\DoxyCodeLine{86             \mbox{\hyperlink{classNodo}{Nodo<DATO>}} * tmp;}
+\DoxyCodeLine{87             tmp = \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}};}
+\DoxyCodeLine{88             \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{89                 \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}{dato}} == \_dato)\{}
+\DoxyCodeLine{90                     nodo\_anterior-\/>\mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}} = tmp-\/>\mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}};}
+\DoxyCodeLine{91                     tmp-\/>\mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}} = NULL;}
+\DoxyCodeLine{92                     \textcolor{keyword}{delete} tmp;}
+\DoxyCodeLine{93                     \mbox{\hyperlink{classListaSimple_aa28aaacca240ae27ebdda6b12bc72838}{size}} -\/= 1;}
+\DoxyCodeLine{94                 \}}
+\DoxyCodeLine{95                 nodo\_anterior = tmp;}
+\DoxyCodeLine{96                 tmp = tmp-\/>\mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}};}
+\DoxyCodeLine{97             \}}
+\DoxyCodeLine{98         \}}
+\DoxyCodeLine{99     \}}
+\DoxyCodeLine{100 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classListaSimple_a50c459ce1fffffc2a543733b995bcb8a}\label{classListaSimple_a50c459ce1fffffc2a543733b995bcb8a}} 
+\index{ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}!estaVacia@{estaVacia}}
+\index{estaVacia@{estaVacia}!ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{estaVacia()}{estaVacia()}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+bool \mbox{\hyperlink{classListaSimple}{Lista\+Simple}}$<$ DATO $>$\+::esta\+Vacia}
+
+
+
+Check the list is empty. 
+
+\begin{DoxyReturn}{Returns}
+bool, if the list is empty 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file listasimple.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{129                                  \{}
+\DoxyCodeLine{130     \textcolor{keywordflow}{return} \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}} == NULL;}
+\DoxyCodeLine{131 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classListaSimple_a31f8348d8e1d39d7c2abdc49940ea8ab}\label{classListaSimple_a31f8348d8e1d39d7c2abdc49940ea8ab}} 
+\index{ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}!insertar@{insertar}}
+\index{insertar@{insertar}!ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{insertar()}{insertar()}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+void \mbox{\hyperlink{classListaSimple}{Lista\+Simple}}$<$ DATO $>$\+::insertar (\begin{DoxyParamCaption}\item[{DATO}]{\+\_\+dato }\end{DoxyParamCaption})}
+
+
+
+Add node to the list. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em DATO,list} & data type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+dato,node} & to add at the list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file listasimple.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52                                           \{}
+\DoxyCodeLine{53     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}} == NULL) \{}
+\DoxyCodeLine{54         \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}} = \textcolor{keyword}{new} \mbox{\hyperlink{classNodo}{Nodo<DATO>}}(\_dato);}
+\DoxyCodeLine{55         \mbox{\hyperlink{classListaSimple_aa28aaacca240ae27ebdda6b12bc72838}{size}} += 1;}
+\DoxyCodeLine{56     \}\textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{57         \mbox{\hyperlink{classNodo}{Nodo<DATO>}} * tmp = \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}};}
+\DoxyCodeLine{58         \textcolor{keywordflow}{while} (tmp-\/>\mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}} != NULL)\{}
+\DoxyCodeLine{59             tmp = tmp-\/>\mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}};}
+\DoxyCodeLine{60         \}}
+\DoxyCodeLine{61         \mbox{\hyperlink{classNodo}{Nodo<DATO>}} * nuevo = \textcolor{keyword}{new} \mbox{\hyperlink{classNodo}{Nodo<DATO>}}(\_dato);}
+\DoxyCodeLine{62         tmp-\/>\mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}} = nuevo;}
+\DoxyCodeLine{63         nuevo-\/>\mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}} = NULL;}
+\DoxyCodeLine{64         \mbox{\hyperlink{classListaSimple_aa28aaacca240ae27ebdda6b12bc72838}{size}} += 1;}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classListaSimple_a7b534c84d6fc5a51c3936c98d6cf1999}\label{classListaSimple_a7b534c84d6fc5a51c3936c98d6cf1999}} 
+\index{ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}!obtenerPos@{obtenerPos}}
+\index{obtenerPos@{obtenerPos}!ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{obtenerPos()}{obtenerPos()}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+DATO \mbox{\hyperlink{classListaSimple}{Lista\+Simple}}$<$ DATO $>$\+::obtener\+Pos (\begin{DoxyParamCaption}\item[{int}]{Pos }\end{DoxyParamCaption})}
+
+
+
+Get node given a pos. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Pos,pos} & of the node \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+dato in the specific pos 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file listasimple.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{109                                          \{}
+\DoxyCodeLine{110     \mbox{\hyperlink{classNodo}{Nodo<DATO>}} *tmp = \mbox{\hyperlink{classListaSimple_a80df012ca705125e995e652d43d01fbb}{inicio}};}
+\DoxyCodeLine{111     \textcolor{keywordtype}{int} i=0;}
+\DoxyCodeLine{112     \textcolor{keywordflow}{if}(tmp != NULL)\{}
+\DoxyCodeLine{113         \textcolor{keywordflow}{if}(Pos == 0)\{}
+\DoxyCodeLine{114             \textcolor{keywordflow}{return} tmp-\/>\mbox{\hyperlink{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}{dato}};}
+\DoxyCodeLine{115         \}}
+\DoxyCodeLine{116         \textcolor{keywordflow}{while}(i < Pos \&\& i <= \mbox{\hyperlink{classListaSimple_aa28aaacca240ae27ebdda6b12bc72838}{size}})\{}
+\DoxyCodeLine{117             tmp = tmp-\/>\mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}};}
+\DoxyCodeLine{118             i += 1; }
+\DoxyCodeLine{119     \}   \textcolor{keywordflow}{return} tmp-\/>\mbox{\hyperlink{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}{dato}}; }
+\DoxyCodeLine{120     \} \textcolor{keywordflow}{return} tmp-\/>\mbox{\hyperlink{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}{dato}};}
+\DoxyCodeLine{121 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classListaSimple_a80df012ca705125e995e652d43d01fbb}\label{classListaSimple_a80df012ca705125e995e652d43d01fbb}} 
+\index{ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}!inicio@{inicio}}
+\index{inicio@{inicio}!ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{inicio}{inicio}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+\mbox{\hyperlink{classNodo}{Nodo}}$<$DATO$>$$\ast$ \mbox{\hyperlink{classListaSimple}{Lista\+Simple}}$<$ DATO $>$\+::inicio}
+
+
+
+Definition at line 30 of file listasimple.\+h.
+
+\mbox{\Hypertarget{classListaSimple_aa28aaacca240ae27ebdda6b12bc72838}\label{classListaSimple_aa28aaacca240ae27ebdda6b12bc72838}} 
+\index{ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}!size@{size}}
+\index{size@{size}!ListaSimple$<$ DATO $>$@{ListaSimple$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+int \mbox{\hyperlink{classListaSimple}{Lista\+Simple}}$<$ DATO $>$\+::size = 0}
+
+
+
+Definition at line 31 of file listasimple.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+TECFS/\mbox{\hyperlink{listasimple_8h}{listasimple.\+h}}\end{DoxyCompactItemize}

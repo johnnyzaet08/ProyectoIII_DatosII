@@ -1,0 +1,218 @@
+\hypertarget{classNodo}{}\doxysection{Nodo$<$ DATO $>$ Class Template Reference}
+\label{classNodo}\index{Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}}
+
+
+\mbox{\hyperlink{structNode}{Node}}, struc.  
+
+
+
+
+{\ttfamily \#include $<$nodo.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNodo_a4bc256b59a521dcab1d1350bb8f5ab0f}{Nodo}} ()
+\item 
+\mbox{\hyperlink{classNodo_a444a74bf40b19a03b46d9fcc1cf7689f}{Nodo}} (DATO \+\_\+dato)
+\item 
+\mbox{\hyperlink{classNodo_afa9eb7d4f05add96960854dba1e54191}{Nodo}} (DATO \+\_\+dato, \mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$ $\ast$\+\_\+siguiente)
+\item 
+void \mbox{\hyperlink{classNodo_ae423ad19e9a0e944a5be1d69ce749648}{operator delete}} (void $\ast$p)
+\begin{DoxyCompactList}\small\item\em Delete de memory space of the node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodo_a50f49fb06719b7b83cd2d58c7bd654fd}{modif}} (DATO \+\_\+dato)
+\begin{DoxyCompactList}\small\item\em Edited the value of the node. \end{DoxyCompactList}\item 
+DATO \mbox{\hyperlink{classNodo_a56bb4f6a1c8f29be1ac83b1c85a33f65}{consulta}} ()
+\begin{DoxyCompactList}\small\item\em Consult the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+DATO \mbox{\hyperlink{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}{dato}}
+\item 
+\mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$ $\ast$ \mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class DATO$>$\newline
+class Nodo$<$ DATO $>$}
+\mbox{\hyperlink{structNode}{Node}}, struc. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em DATO,type} & of the node \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 23 of file nodo.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNodo_a4bc256b59a521dcab1d1350bb8f5ab0f}\label{classNodo_a4bc256b59a521dcab1d1350bb8f5ab0f}} 
+\index{Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}!Nodo@{Nodo}}
+\index{Nodo@{Nodo}!Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{Nodo()}{Nodo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+\mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$\+::\mbox{\hyperlink{classNodo}{Nodo}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 30 of file nodo.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30           \{}
+\DoxyCodeLine{31         \mbox{\hyperlink{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}{dato}};}
+\DoxyCodeLine{32         \mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}} = NULL;}
+\DoxyCodeLine{33     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classNodo_a444a74bf40b19a03b46d9fcc1cf7689f}\label{classNodo_a444a74bf40b19a03b46d9fcc1cf7689f}} 
+\index{Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}!Nodo@{Nodo}}
+\index{Nodo@{Nodo}!Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{Nodo()}{Nodo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+\mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$\+::\mbox{\hyperlink{classNodo}{Nodo}} (\begin{DoxyParamCaption}\item[{DATO}]{\+\_\+dato }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 35 of file nodo.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35                     \{}
+\DoxyCodeLine{36         \mbox{\hyperlink{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}{dato}} = \_dato;}
+\DoxyCodeLine{37         \mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}} = NULL;}
+\DoxyCodeLine{38     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classNodo_afa9eb7d4f05add96960854dba1e54191}\label{classNodo_afa9eb7d4f05add96960854dba1e54191}} 
+\index{Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}!Nodo@{Nodo}}
+\index{Nodo@{Nodo}!Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{Nodo()}{Nodo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+\mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$\+::\mbox{\hyperlink{classNodo}{Nodo}} (\begin{DoxyParamCaption}\item[{DATO}]{\+\_\+dato,  }\item[{\mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$ $\ast$}]{\+\_\+siguiente }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 40 of file nodo.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                                              \{}
+\DoxyCodeLine{41         \mbox{\hyperlink{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}{dato}} = \_dato;}
+\DoxyCodeLine{42         \mbox{\hyperlink{classNodo_aad24185e0f39d1e098a638dbabc9a56e}{siguiente}} = \_siguiente;}
+\DoxyCodeLine{43     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodo_a56bb4f6a1c8f29be1ac83b1c85a33f65}\label{classNodo_a56bb4f6a1c8f29be1ac83b1c85a33f65}} 
+\index{Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}!consulta@{consulta}}
+\index{consulta@{consulta}!Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{consulta()}{consulta()}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+DATO \mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$\+::consulta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Consult the node. 
+
+
+
+Definition at line 65 of file nodo.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65                    \{}
+\DoxyCodeLine{66         \textcolor{keywordflow}{return} \mbox{\hyperlink{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}{dato}};}
+\DoxyCodeLine{67     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classNodo_a50f49fb06719b7b83cd2d58c7bd654fd}\label{classNodo_a50f49fb06719b7b83cd2d58c7bd654fd}} 
+\index{Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}!modif@{modif}}
+\index{modif@{modif}!Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{modif()}{modif()}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+void \mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$\+::modif (\begin{DoxyParamCaption}\item[{DATO}]{\+\_\+dato }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Edited the value of the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DATO,node} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file nodo.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58                           \{}
+\DoxyCodeLine{59         \mbox{\hyperlink{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}{dato}} = \_dato;}
+\DoxyCodeLine{60     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classNodo_ae423ad19e9a0e944a5be1d69ce749648}\label{classNodo_ae423ad19e9a0e944a5be1d69ce749648}} 
+\index{Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}!operator delete@{operator delete}}
+\index{operator delete@{operator delete}!Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{operator delete()}{operator delete()}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+void \mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$\+::operator delete (\begin{DoxyParamCaption}\item[{void $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delete de memory space of the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p,pointer} & of the node \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file nodo.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{49                                   \{}
+\DoxyCodeLine{50         free(p);}
+\DoxyCodeLine{51     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}\label{classNodo_ac924fbaba2719c2a60540a6c2e5dcf4c}} 
+\index{Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}!dato@{dato}}
+\index{dato@{dato}!Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{dato}{dato}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+DATO \mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$\+::dato}
+
+
+
+Definition at line 25 of file nodo.\+h.
+
+\mbox{\Hypertarget{classNodo_aad24185e0f39d1e098a638dbabc9a56e}\label{classNodo_aad24185e0f39d1e098a638dbabc9a56e}} 
+\index{Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}!siguiente@{siguiente}}
+\index{siguiente@{siguiente}!Nodo$<$ DATO $>$@{Nodo$<$ DATO $>$}}
+\doxysubsubsection{\texorpdfstring{siguiente}{siguiente}}
+{\footnotesize\ttfamily template$<$class DATO $>$ \\
+\mbox{\hyperlink{classNodo}{Nodo}}$<$DATO$>$$\ast$ \mbox{\hyperlink{classNodo}{Nodo}}$<$ DATO $>$\+::siguiente}
+
+
+
+Definition at line 26 of file nodo.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+TECFS/\mbox{\hyperlink{nodo_8h}{nodo.\+h}}\end{DoxyCompactItemize}

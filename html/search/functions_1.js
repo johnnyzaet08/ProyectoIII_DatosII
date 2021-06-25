@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emainwindow_14',['~MainWindow',['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]]
+  ['bloque_96',['Bloque',['../classBloque.html#a3ea37861f40b57e2790fcd220a640ac7',1,'Bloque::Bloque()'],['../classBloque.html#a93e98d17cf52869edfcb50380f62d6ce',1,'Bloque::Bloque(void *memoryT)']]]
 ];

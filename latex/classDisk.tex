@@ -1,0 +1,208 @@
+\hypertarget{classDisk}{}\doxysection{Disk Class Reference}
+\label{classDisk}\index{Disk@{Disk}}
+
+
+Crea el disco y sus bloques para almacenar datos.  
+
+
+
+
+{\ttfamily \#include $<$Disk.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDisk_a77c78c00f5234785c35cb012fc9b06af}{Disk}} (int tamano)
+\item 
+bool \mbox{\hyperlink{classDisk_aecbe3b9b7fba709f04f47c7b35e60113}{Revisar}} (int)
+\begin{DoxyCompactList}\small\item\em Revisa si aun tiene espacio. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{classDisk_aed341b597373a4bf09da163e9bf98c06}{Agregar}} (std\+::string)
+\item 
+void \mbox{\hyperlink{classDisk_afd504d5e365edb0c57b423ab5b7d3616}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Elimina el disco. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{classDisk_a55b54b0dbde7d3c4308a8bfc502d8e05}{memory\+Total}}
+\item 
+int $\ast$ \mbox{\hyperlink{classDisk_a7f726da89ee8305c59b2b39de9e61c1c}{memory\+Used}}
+\item 
+\mbox{\hyperlink{classBloque}{Bloque}} \mbox{\hyperlink{classDisk_a4e096dca3ee079415e3f5c6b700184aa}{bloque1}}
+\item 
+\mbox{\hyperlink{classBloque}{Bloque}} \mbox{\hyperlink{classDisk_a33a61fbf876fe4ca81d52ada4d3bc65d}{bloque2}}
+\item 
+\mbox{\hyperlink{classBloque}{Bloque}} \mbox{\hyperlink{classDisk_a3c0b9e78e222b3f227679e9ba62d20a0}{bloque3}}
+\item 
+\mbox{\hyperlink{classBloque}{Bloque}} \mbox{\hyperlink{classDisk_ae6c77adc0d76be759679743349368473}{bloque4}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Crea el disco y sus bloques para almacenar datos. 
+
+Definition at line 24 of file Disk.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDisk_a77c78c00f5234785c35cb012fc9b06af}\label{classDisk_a77c78c00f5234785c35cb012fc9b06af}} 
+\index{Disk@{Disk}!Disk@{Disk}}
+\index{Disk@{Disk}!Disk@{Disk}}
+\doxysubsubsection{\texorpdfstring{Disk()}{Disk()}}
+{\footnotesize\ttfamily Disk\+::\+Disk (\begin{DoxyParamCaption}\item[{int}]{tamano }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 30 of file Disk.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30                     \{}
+\DoxyCodeLine{31         \textcolor{keywordflow}{if}((\mbox{\hyperlink{classDisk_a55b54b0dbde7d3c4308a8bfc502d8e05}{memoryTotal}} = malloc(tamano))==NULL)\{}
+\DoxyCodeLine{32             std::cout << \textcolor{stringliteral}{"{}No se pudo crear el espacio de memoria solicitado"{}} << std::endl;}
+\DoxyCodeLine{33         \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{34             std::cout << \textcolor{stringliteral}{"{}Espacio de memoria creado con: "{}} << tamano << \textcolor{stringliteral}{"{} bytes"{}} << std::endl;}
+\DoxyCodeLine{35             }
+\DoxyCodeLine{36             \mbox{\hyperlink{classDisk_a4e096dca3ee079415e3f5c6b700184aa}{bloque1}} = \textcolor{keyword}{new} \mbox{\hyperlink{classBloque}{Bloque}}(\mbox{\hyperlink{classDisk_a55b54b0dbde7d3c4308a8bfc502d8e05}{memoryTotal}});}
+\DoxyCodeLine{37             \mbox{\hyperlink{classDisk_a33a61fbf876fe4ca81d52ada4d3bc65d}{bloque2}} = \textcolor{keyword}{new} \mbox{\hyperlink{classBloque}{Bloque}}(\mbox{\hyperlink{classDisk_a55b54b0dbde7d3c4308a8bfc502d8e05}{memoryTotal}});}
+\DoxyCodeLine{38             \mbox{\hyperlink{classDisk_a3c0b9e78e222b3f227679e9ba62d20a0}{bloque3}} = \textcolor{keyword}{new} \mbox{\hyperlink{classBloque}{Bloque}}(\mbox{\hyperlink{classDisk_a55b54b0dbde7d3c4308a8bfc502d8e05}{memoryTotal}});}
+\DoxyCodeLine{39             \mbox{\hyperlink{classDisk_ae6c77adc0d76be759679743349368473}{bloque4}} = \textcolor{keyword}{new} \mbox{\hyperlink{classBloque}{Bloque}}(\mbox{\hyperlink{classDisk_a55b54b0dbde7d3c4308a8bfc502d8e05}{memoryTotal}});}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDisk_aed341b597373a4bf09da163e9bf98c06}\label{classDisk_aed341b597373a4bf09da163e9bf98c06}} 
+\index{Disk@{Disk}!Agregar@{Agregar}}
+\index{Agregar@{Agregar}!Disk@{Disk}}
+\doxysubsubsection{\texorpdfstring{Agregar()}{Agregar()}}
+{\footnotesize\ttfamily void$\ast$ Disk\+::\+Agregar (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDisk_afd504d5e365edb0c57b423ab5b7d3616}\label{classDisk_afd504d5e365edb0c57b423ab5b7d3616}} 
+\index{Disk@{Disk}!Clear@{Clear}}
+\index{Clear@{Clear}!Disk@{Disk}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Disk\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Elimina el disco. 
+
+
+
+Definition at line 68 of file Disk.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68                 \{}
+\DoxyCodeLine{69     this-\/>\mbox{\hyperlink{classDisk_afd504d5e365edb0c57b423ab5b7d3616}{Clear}}();}
+\DoxyCodeLine{70 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDisk_aecbe3b9b7fba709f04f47c7b35e60113}\label{classDisk_aecbe3b9b7fba709f04f47c7b35e60113}} 
+\index{Disk@{Disk}!Revisar@{Revisar}}
+\index{Revisar@{Revisar}!Disk@{Disk}}
+\doxysubsubsection{\texorpdfstring{Revisar()}{Revisar()}}
+{\footnotesize\ttfamily bool Disk\+::\+Revisar (\begin{DoxyParamCaption}\item[{int}]{espacio }\end{DoxyParamCaption})}
+
+
+
+Revisa si aun tiene espacio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em espacio} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file Disk.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55                              \{}
+\DoxyCodeLine{56     \textcolor{keywordflow}{if}((\mbox{\hyperlink{classDisk_a7f726da89ee8305c59b2b39de9e61c1c}{memoryUsed}}+espacio) > \mbox{\hyperlink{classDisk_a55b54b0dbde7d3c4308a8bfc502d8e05}{memoryTotal}})\{}
+\DoxyCodeLine{57         std::cout << \textcolor{stringliteral}{"{}Espacio en memoria insuficiente"{}} << std::endl;}
+\DoxyCodeLine{58         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{59     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{60         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDisk_a4e096dca3ee079415e3f5c6b700184aa}\label{classDisk_a4e096dca3ee079415e3f5c6b700184aa}} 
+\index{Disk@{Disk}!bloque1@{bloque1}}
+\index{bloque1@{bloque1}!Disk@{Disk}}
+\doxysubsubsection{\texorpdfstring{bloque1}{bloque1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBloque}{Bloque}} Disk\+::bloque1}
+
+
+
+Definition at line 28 of file Disk.\+h.
+
+\mbox{\Hypertarget{classDisk_a33a61fbf876fe4ca81d52ada4d3bc65d}\label{classDisk_a33a61fbf876fe4ca81d52ada4d3bc65d}} 
+\index{Disk@{Disk}!bloque2@{bloque2}}
+\index{bloque2@{bloque2}!Disk@{Disk}}
+\doxysubsubsection{\texorpdfstring{bloque2}{bloque2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBloque}{Bloque}} Disk\+::bloque2}
+
+
+
+Definition at line 28 of file Disk.\+h.
+
+\mbox{\Hypertarget{classDisk_a3c0b9e78e222b3f227679e9ba62d20a0}\label{classDisk_a3c0b9e78e222b3f227679e9ba62d20a0}} 
+\index{Disk@{Disk}!bloque3@{bloque3}}
+\index{bloque3@{bloque3}!Disk@{Disk}}
+\doxysubsubsection{\texorpdfstring{bloque3}{bloque3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBloque}{Bloque}} Disk\+::bloque3}
+
+
+
+Definition at line 28 of file Disk.\+h.
+
+\mbox{\Hypertarget{classDisk_ae6c77adc0d76be759679743349368473}\label{classDisk_ae6c77adc0d76be759679743349368473}} 
+\index{Disk@{Disk}!bloque4@{bloque4}}
+\index{bloque4@{bloque4}!Disk@{Disk}}
+\doxysubsubsection{\texorpdfstring{bloque4}{bloque4}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBloque}{Bloque}} Disk\+::bloque4}
+
+
+
+Definition at line 28 of file Disk.\+h.
+
+\mbox{\Hypertarget{classDisk_a55b54b0dbde7d3c4308a8bfc502d8e05}\label{classDisk_a55b54b0dbde7d3c4308a8bfc502d8e05}} 
+\index{Disk@{Disk}!memoryTotal@{memoryTotal}}
+\index{memoryTotal@{memoryTotal}!Disk@{Disk}}
+\doxysubsubsection{\texorpdfstring{memoryTotal}{memoryTotal}}
+{\footnotesize\ttfamily void$\ast$ Disk\+::memory\+Total}
+
+
+
+Definition at line 26 of file Disk.\+h.
+
+\mbox{\Hypertarget{classDisk_a7f726da89ee8305c59b2b39de9e61c1c}\label{classDisk_a7f726da89ee8305c59b2b39de9e61c1c}} 
+\index{Disk@{Disk}!memoryUsed@{memoryUsed}}
+\index{memoryUsed@{memoryUsed}!Disk@{Disk}}
+\doxysubsubsection{\texorpdfstring{memoryUsed}{memoryUsed}}
+{\footnotesize\ttfamily int$\ast$ Disk\+::memory\+Used}
+
+
+
+Definition at line 27 of file Disk.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+TECFS/\mbox{\hyperlink{Disk_8h}{Disk.\+h}}\end{DoxyCompactItemize}

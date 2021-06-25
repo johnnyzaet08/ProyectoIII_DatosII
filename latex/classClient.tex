@@ -1,0 +1,137 @@
+\hypertarget{classClient}{}\doxysection{Client Class Reference}
+\label{classClient}\index{Client@{Client}}
+
+
+create the client socket  
+
+
+
+
+{\ttfamily \#include $<$Client.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}{Client}} ()
+\item 
+void \mbox{\hyperlink{classClient_a2091d76989fba1aebc7857fd8beda8de}{Enviar}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em send the menssage of the server \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classClient_ae6839cd7d1f5458b2950e32296e4e4e5}{client}}
+\item 
+int \mbox{\hyperlink{classClient_a92ce815f312a1ff301f06371eea38dc9}{port\+Num}} = 10500
+\item 
+const char $\ast$ \mbox{\hyperlink{classClient_aaadd8796276c2d9e54bf5b6f8be0f873}{ip}} = \char`\"{}127.\+0.\+0.\+1\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+create the client socket 
+
+Definition at line 31 of file Client.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}\label{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 38 of file Client.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38             \{}
+\DoxyCodeLine{39         \textcolor{keyword}{struct }sockaddr\_in server\_addr;}
+\DoxyCodeLine{40         \mbox{\hyperlink{classClient_ae6839cd7d1f5458b2950e32296e4e4e5}{client}} = socket(AF\_INET, SOCK\_STREAM, 0);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classClient_ae6839cd7d1f5458b2950e32296e4e4e5}{client}} < 0)\{}
+\DoxyCodeLine{43             std::cout << \textcolor{stringliteral}{"{}\(\backslash\)nError al establecer el socket"{}} << std::endl;}
+\DoxyCodeLine{44             exit(1);}
+\DoxyCodeLine{45         \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n=> Socket del cliente creado"{}} << std::endl;}
+\DoxyCodeLine{48         }
+\DoxyCodeLine{49         server\_addr.sin\_addr.s\_addr = inet\_addr(\mbox{\hyperlink{classClient_aaadd8796276c2d9e54bf5b6f8be0f873}{ip}});}
+\DoxyCodeLine{50         server\_addr.sin\_family = AF\_INET;}
+\DoxyCodeLine{51         server\_addr.sin\_port = htons(\mbox{\hyperlink{classClient_a92ce815f312a1ff301f06371eea38dc9}{portNum}});}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{keywordflow}{if} (connect(\mbox{\hyperlink{classClient_ae6839cd7d1f5458b2950e32296e4e4e5}{client}},(\textcolor{keyword}{struct} sockaddr *)\&server\_addr, \textcolor{keyword}{sizeof}(server\_addr)) == 0)}
+\DoxyCodeLine{54             std::cout << \textcolor{stringliteral}{"{}=> Conectando al servidor en el puerto: "{}} << \mbox{\hyperlink{classClient_a92ce815f312a1ff301f06371eea38dc9}{portNum}} << std::endl;}
+\DoxyCodeLine{55     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClient_a2091d76989fba1aebc7857fd8beda8de}\label{classClient_a2091d76989fba1aebc7857fd8beda8de}} 
+\index{Client@{Client}!Enviar@{Enviar}}
+\index{Enviar@{Enviar}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Enviar()}{Enviar()}}
+{\footnotesize\ttfamily void Client\+::\+Enviar (\begin{DoxyParamCaption}\item[{std\+::string}]{text }\end{DoxyParamCaption})}
+
+
+
+send the menssage of the server 
+
+\begin{DoxyReturn}{Returns}
+string menssage to send at the server. 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file Client.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66                                  \{}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} bufsizeS = 1024;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{char} bufferS[1024];}
+\DoxyCodeLine{69     std::copy(text.begin(), text.end(), bufferS);}
+\DoxyCodeLine{70     send(\mbox{\hyperlink{classClient_ae6839cd7d1f5458b2950e32296e4e4e5}{client}}, bufferS, bufsizeS, 0);}
+\DoxyCodeLine{71 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classClient_ae6839cd7d1f5458b2950e32296e4e4e5}\label{classClient_ae6839cd7d1f5458b2950e32296e4e4e5}} 
+\index{Client@{Client}!client@{client}}
+\index{client@{client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily int Client\+::client}
+
+
+
+Definition at line 33 of file Client.\+h.
+
+\mbox{\Hypertarget{classClient_aaadd8796276c2d9e54bf5b6f8be0f873}\label{classClient_aaadd8796276c2d9e54bf5b6f8be0f873}} 
+\index{Client@{Client}!ip@{ip}}
+\index{ip@{ip}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{ip}{ip}}
+{\footnotesize\ttfamily const char$\ast$ Client\+::ip = \char`\"{}127.\+0.\+0.\+1\char`\"{}}
+
+
+
+Definition at line 35 of file Client.\+h.
+
+\mbox{\Hypertarget{classClient_a92ce815f312a1ff301f06371eea38dc9}\label{classClient_a92ce815f312a1ff301f06371eea38dc9}} 
+\index{Client@{Client}!portNum@{portNum}}
+\index{portNum@{portNum}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{portNum}{portNum}}
+{\footnotesize\ttfamily int Client\+::port\+Num = 10500}
+
+
+
+Definition at line 34 of file Client.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+TECFS/\mbox{\hyperlink{Client_8h}{Client.\+h}}\end{DoxyCompactItemize}
