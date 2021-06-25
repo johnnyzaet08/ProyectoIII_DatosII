@@ -1,5 +1,15 @@
-#ifndef MEMORY_H
-#define MEMORY_H
+/**
+ * @file Disk.h
+ * @author Johnny Aguero
+ * @brief Disco para con sus bloques
+ * @version 0.1
+ * @date 2021-06-25
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+#ifndef DISK_H
+#define DISK_H
 
 
 #include <iostream>
@@ -7,6 +17,10 @@
 #include <memory.h>
 #include "block.h"
 
+/**
+ * @brief Crea el disco y sus bloques para almacenar datos
+ * 
+ */
 class Disk{
     public:
         void *memoryTotal;
@@ -31,6 +45,13 @@ class Disk{
     void Clear();
 };
 
+/**
+ * @brief Revisa si aun tiene espacio
+ * 
+ * @param espacio 
+ * @return true 
+ * @return false 
+ */
 bool Disk::Revisar(int espacio){
     if((memoryUsed+espacio) > memoryTotal){
         std::cout << "Espacio en memoria insuficiente" << std::endl;
@@ -40,7 +61,10 @@ bool Disk::Revisar(int espacio){
     }
 }
 
-
+/**
+ * @brief Elimina el disco
+ * 
+ */
 void Disk::Clear(){
     this->Clear();
 }
