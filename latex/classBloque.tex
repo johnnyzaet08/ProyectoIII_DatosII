@@ -1,0 +1,206 @@
+\hypertarget{classBloque}{}\doxysection{Bloque Class Reference}
+\label{classBloque}\index{Bloque@{Bloque}}
+
+
+Contiene el almacenador de datos.  
+
+
+
+
+{\ttfamily \#include $<$Block.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBloque_a3ea37861f40b57e2790fcd220a640ac7}{Bloque}} ()
+\item 
+\mbox{\hyperlink{classBloque_a93e98d17cf52869edfcb50380f62d6ce}{Bloque}} (void $\ast$memoryT)
+\item 
+void \mbox{\hyperlink{classBloque_a779133294e7bc1ce699fa1e00905eb12}{set}} (int dato)
+\begin{DoxyCompactList}\small\item\em Guarda el byte del cliente. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBloque_a002405052582644cc19c90acb659ba34}{get}} (int pos)
+\begin{DoxyCompactList}\small\item\em Accede a los bytes del bloque. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBloque_ad6883dfe3506704ee4db45edcb5a333e}{empty}} ()
+\begin{DoxyCompactList}\small\item\em Revisa si esta vacia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classBloque_a02789e8dc9164db2df7c5709f0c358e0}{bytes}} = 0
+\item 
+int $\ast$ \mbox{\hyperlink{classBloque_a8d1a709b8bbed086992b97ccdf5291a9}{data}}
+\item 
+\mbox{\hyperlink{classListaSimple}{Lista\+Simple}}$<$ int $>$ $\ast$ \mbox{\hyperlink{classBloque_a8288678e25ca902660f4c69e9c8bf958}{data\+Bytes}} = new \mbox{\hyperlink{classListaSimple}{Lista\+Simple}}$<$int$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contiene el almacenador de datos. 
+
+Definition at line 22 of file Block.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBloque_a3ea37861f40b57e2790fcd220a640ac7}\label{classBloque_a3ea37861f40b57e2790fcd220a640ac7}} 
+\index{Bloque@{Bloque}!Bloque@{Bloque}}
+\index{Bloque@{Bloque}!Bloque@{Bloque}}
+\doxysubsubsection{\texorpdfstring{Bloque()}{Bloque()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bloque\+::\+Bloque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 29 of file Block.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29             \{}
+\DoxyCodeLine{30     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBloque_a93e98d17cf52869edfcb50380f62d6ce}\label{classBloque_a93e98d17cf52869edfcb50380f62d6ce}} 
+\index{Bloque@{Bloque}!Bloque@{Bloque}}
+\index{Bloque@{Bloque}!Bloque@{Bloque}}
+\doxysubsubsection{\texorpdfstring{Bloque()}{Bloque()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Bloque\+::\+Bloque (\begin{DoxyParamCaption}\item[{void $\ast$}]{memoryT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 31 of file Block.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31                           \{}
+\DoxyCodeLine{32         \mbox{\hyperlink{classBloque_a8d1a709b8bbed086992b97ccdf5291a9}{data}} = (\textcolor{keywordtype}{int}*)memoryT;}
+\DoxyCodeLine{33     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBloque_ad6883dfe3506704ee4db45edcb5a333e}\label{classBloque_ad6883dfe3506704ee4db45edcb5a333e}} 
+\index{Bloque@{Bloque}!empty@{empty}}
+\index{empty@{empty}!Bloque@{Bloque}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Bloque\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Revisa si esta vacia. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file Block.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                 \{}
+\DoxyCodeLine{64         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classBloque_a02789e8dc9164db2df7c5709f0c358e0}{bytes}} == 256)\{}
+\DoxyCodeLine{65             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{68             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{69         \}}
+\DoxyCodeLine{70     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBloque_a002405052582644cc19c90acb659ba34}\label{classBloque_a002405052582644cc19c90acb659ba34}} 
+\index{Bloque@{Bloque}!get@{get}}
+\index{get@{get}!Bloque@{Bloque}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily int Bloque\+::get (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accede a los bytes del bloque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file Block.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52                     \{}
+\DoxyCodeLine{53         \textcolor{keywordtype}{int} temp = \mbox{\hyperlink{classBloque_a8288678e25ca902660f4c69e9c8bf958}{dataBytes}}-\/>obtenerPos(pos);}
+\DoxyCodeLine{54         \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{55     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBloque_a779133294e7bc1ce699fa1e00905eb12}\label{classBloque_a779133294e7bc1ce699fa1e00905eb12}} 
+\index{Bloque@{Bloque}!set@{set}}
+\index{set@{set}!Bloque@{Bloque}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Bloque\+::set (\begin{DoxyParamCaption}\item[{int}]{dato }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Guarda el byte del cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dato} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file Block.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                       \{}
+\DoxyCodeLine{41         \mbox{\hyperlink{classBloque_a8d1a709b8bbed086992b97ccdf5291a9}{data}}[\mbox{\hyperlink{classBloque_a02789e8dc9164db2df7c5709f0c358e0}{bytes}}] = dato;}
+\DoxyCodeLine{42         \mbox{\hyperlink{classBloque_a8288678e25ca902660f4c69e9c8bf958}{dataBytes}}-\/>insertar(dato);}
+\DoxyCodeLine{43         \mbox{\hyperlink{classBloque_a02789e8dc9164db2df7c5709f0c358e0}{bytes}}++;}
+\DoxyCodeLine{44     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBloque_a02789e8dc9164db2df7c5709f0c358e0}\label{classBloque_a02789e8dc9164db2df7c5709f0c358e0}} 
+\index{Bloque@{Bloque}!bytes@{bytes}}
+\index{bytes@{bytes}!Bloque@{Bloque}}
+\doxysubsubsection{\texorpdfstring{bytes}{bytes}}
+{\footnotesize\ttfamily int Bloque\+::bytes = 0}
+
+
+
+Definition at line 24 of file Block.\+h.
+
+\mbox{\Hypertarget{classBloque_a8d1a709b8bbed086992b97ccdf5291a9}\label{classBloque_a8d1a709b8bbed086992b97ccdf5291a9}} 
+\index{Bloque@{Bloque}!data@{data}}
+\index{data@{data}!Bloque@{Bloque}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily int$\ast$ Bloque\+::data}
+
+
+
+Definition at line 25 of file Block.\+h.
+
+\mbox{\Hypertarget{classBloque_a8288678e25ca902660f4c69e9c8bf958}\label{classBloque_a8288678e25ca902660f4c69e9c8bf958}} 
+\index{Bloque@{Bloque}!dataBytes@{dataBytes}}
+\index{dataBytes@{dataBytes}!Bloque@{Bloque}}
+\doxysubsubsection{\texorpdfstring{dataBytes}{dataBytes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classListaSimple}{Lista\+Simple}}$<$int$>$$\ast$ Bloque\+::data\+Bytes = new \mbox{\hyperlink{classListaSimple}{Lista\+Simple}}$<$int$>$()}
+
+
+
+Definition at line 26 of file Block.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+TECFS/\mbox{\hyperlink{Block_8h}{Block.\+h}}\end{DoxyCompactItemize}

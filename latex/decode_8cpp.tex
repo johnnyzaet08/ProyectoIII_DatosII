@@ -1,0 +1,38 @@
+\hypertarget{decode_8cpp}{}\doxysection{TECFS/\+Huffman/decode.cpp File Reference}
+\label{decode_8cpp}\index{TECFS/Huffman/decode.cpp@{TECFS/Huffman/decode.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}huffman.\+hpp\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{decode_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{decode_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{decode_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{decode.cpp@{decode.cpp}!main@{main}}
+\index{main@{main}!decode.cpp@{decode.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file decode.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5                                  \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{if} (argc != 3) \{}
+\DoxyCodeLine{7         cout << \textcolor{stringliteral}{"{}Failed to detect Files"{}};}
+\DoxyCodeLine{8         exit(1);}
+\DoxyCodeLine{9     \}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \mbox{\hyperlink{classhuffman}{huffman}} f(argv[1], argv[2]);}
+\DoxyCodeLine{12     f.decompress();}
+\DoxyCodeLine{13     cout << \textcolor{stringliteral}{"{}Decompressed successfully"{}} << endl;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}

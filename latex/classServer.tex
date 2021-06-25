@@ -1,0 +1,246 @@
+\hypertarget{classServer}{}\doxysection{Server Class Reference}
+\label{classServer}\index{Server@{Server}}
+
+
+Create the socket server and de logic of the send a receive menssage.  
+
+
+
+
+{\ttfamily \#include $<$Server.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_a7d1fe6ba5f0fe9190a4f039662ea0e85}{Server}} (int port)
+\item 
+std\+::string \mbox{\hyperlink{classServer_a20d861925cd7b91c065ce60d0c6ed62f}{Recibir}} ()
+\begin{DoxyCompactList}\small\item\em Receive the menssage of the client socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_afa0e8ff8ed3d0e062d984a9370183a4a}{Enviar}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Send the menssage for the socket server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classServer_a7d328b1f5a9add79c661ec2b73824706}{bufsize}} = 1024
+\item 
+char \mbox{\hyperlink{classServer_a7d4f27d5564e8be419476a5520f98667}{buffer}} \mbox{[}1024\mbox{]}
+\item 
+int \mbox{\hyperlink{classServer_aeeaffddc4a50831765e2534f49626b62}{client}}
+\item 
+int \mbox{\hyperlink{classServer_a9b92414f756151c727ae4136ef4c9963}{server}}
+\item 
+Json\+::\+Reader \mbox{\hyperlink{classServer_aa0cb5785250bfe0bd984f3fe731085e2}{reader}}
+\item 
+Json\+::\+Value \mbox{\hyperlink{classServer_aa338e45a850b7524c0193d40f6e3a4ea}{dataS}}
+\item 
+Json\+::\+Styled\+Writer \mbox{\hyperlink{classServer_a52432b1665f62d7aed9fd5b1e74211fe}{writer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Create the socket server and de logic of the send a receive menssage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port,port} & of the server. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Server.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_a7d1fe6ba5f0fe9190a4f039662ea0e85}\label{classServer_a7d1fe6ba5f0fe9190a4f039662ea0e85}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 42 of file Server.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42                     \{}
+\DoxyCodeLine{43         \textcolor{keyword}{struct }sockaddr\_in server\_addr;}
+\DoxyCodeLine{44         socklen\_t size;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \mbox{\hyperlink{classServer_aeeaffddc4a50831765e2534f49626b62}{client}} = socket(AF\_INET, SOCK\_STREAM, 0);}
+\DoxyCodeLine{47         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classServer_aeeaffddc4a50831765e2534f49626b62}{client}} < 0) \{}
+\DoxyCodeLine{48             std::cout << \textcolor{stringliteral}{"{}\(\backslash\)nError estableciendo el socket"{}} << std::endl;}
+\DoxyCodeLine{49             exit(1);}
+\DoxyCodeLine{50         \}}
+\DoxyCodeLine{51         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n=> Socket server creado..."{}} << std::endl;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         server\_addr.sin\_family = AF\_INET;}
+\DoxyCodeLine{54         server\_addr.sin\_addr.s\_addr = inet\_addr(\textcolor{stringliteral}{"{}127.0.0.1"{}});}
+\DoxyCodeLine{55         server\_addr.sin\_port = htons(port);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keywordflow}{if} ((bind(\mbox{\hyperlink{classServer_aeeaffddc4a50831765e2534f49626b62}{client}}, (\textcolor{keyword}{struct} sockaddr*)\&server\_addr,\textcolor{keyword}{sizeof}(server\_addr))) < 0) }
+\DoxyCodeLine{59         \{}
+\DoxyCodeLine{60             std::cout << \textcolor{stringliteral}{"{}=> Error estableciendo conexion"{}} << std::endl;}
+\DoxyCodeLine{61             exit(1);}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         size = \textcolor{keyword}{sizeof}(server\_addr);}
+\DoxyCodeLine{65         std::cout << \textcolor{stringliteral}{"{}=> Buscando clientes"{}} << std::endl;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67         listen(\mbox{\hyperlink{classServer_aeeaffddc4a50831765e2534f49626b62}{client}}, 1);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \textcolor{keywordtype}{int} clientCount = 1;}
+\DoxyCodeLine{70         \mbox{\hyperlink{classServer_a9b92414f756151c727ae4136ef4c9963}{server}} = accept(\mbox{\hyperlink{classServer_aeeaffddc4a50831765e2534f49626b62}{client}},(\textcolor{keyword}{struct} sockaddr *)\&server\_addr,\&size);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classServer_a9b92414f756151c727ae4136ef4c9963}{server}} < 0) }
+\DoxyCodeLine{73             std::cout << \textcolor{stringliteral}{"{}=> Error aceptando el cliente"{}} << std::endl;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         std::cout << \textcolor{stringliteral}{"{}=> Conectado con el cliente \#"{}} << clientCount << std::endl;}
+\DoxyCodeLine{76         strcpy(\mbox{\hyperlink{classServer_a7d4f27d5564e8be419476a5520f98667}{buffer}}, \textcolor{stringliteral}{"{}=> Server connected...\(\backslash\)n"{}});}
+\DoxyCodeLine{77         send(\mbox{\hyperlink{classServer_a9b92414f756151c727ae4136ef4c9963}{server}}, \mbox{\hyperlink{classServer_a7d4f27d5564e8be419476a5520f98667}{buffer}}, \mbox{\hyperlink{classServer_a7d328b1f5a9add79c661ec2b73824706}{bufsize}}, 0);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServer_afa0e8ff8ed3d0e062d984a9370183a4a}\label{classServer_afa0e8ff8ed3d0e062d984a9370183a4a}} 
+\index{Server@{Server}!Enviar@{Enviar}}
+\index{Enviar@{Enviar}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Enviar()}{Enviar()}}
+{\footnotesize\ttfamily void Server\+::\+Enviar (\begin{DoxyParamCaption}\item[{std\+::string}]{text }\end{DoxyParamCaption})}
+
+
+
+Send the menssage for the socket server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text,text} & of the send menssage \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file Server.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{105                                  \{}
+\DoxyCodeLine{106     \textcolor{keywordtype}{int} bufsizeS = 1024;}
+\DoxyCodeLine{107     \textcolor{keywordtype}{char} bufferS[1024];}
+\DoxyCodeLine{108     \mbox{\hyperlink{classServer_aa0cb5785250bfe0bd984f3fe731085e2}{reader}}.parse(text, \mbox{\hyperlink{classServer_aa338e45a850b7524c0193d40f6e3a4ea}{dataS}});}
+\DoxyCodeLine{109     std::string data = \mbox{\hyperlink{classServer_a52432b1665f62d7aed9fd5b1e74211fe}{writer}}.write(\mbox{\hyperlink{classServer_aa338e45a850b7524c0193d40f6e3a4ea}{dataS}});}
+\DoxyCodeLine{110     std::copy(data.begin(), data.end(), bufferS);}
+\DoxyCodeLine{111     send(\mbox{\hyperlink{classServer_a9b92414f756151c727ae4136ef4c9963}{server}}, bufferS, bufsizeS, 0);}
+\DoxyCodeLine{112 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classServer_a20d861925cd7b91c065ce60d0c6ed62f}\label{classServer_a20d861925cd7b91c065ce60d0c6ed62f}} 
+\index{Server@{Server}!Recibir@{Recibir}}
+\index{Recibir@{Recibir}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Recibir()}{Recibir()}}
+{\footnotesize\ttfamily std\+::string Server\+::\+Recibir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Receive the menssage of the client socket. 
+
+\begin{DoxyReturn}{Returns}
+text that receive 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file Server.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92                          \{}
+\DoxyCodeLine{93     \textcolor{keywordtype}{int} bufsizeR = 1024;}
+\DoxyCodeLine{94     \textcolor{keywordtype}{char} bufferR[1024];}
+\DoxyCodeLine{95     recv(\mbox{\hyperlink{classServer_a9b92414f756151c727ae4136ef4c9963}{server}}, bufferR, bufsizeR, 0);}
+\DoxyCodeLine{96     std::string text = bufferR;}
+\DoxyCodeLine{97     \textcolor{keywordflow}{return} text;}
+\DoxyCodeLine{98 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classServer_a7d4f27d5564e8be419476a5520f98667}\label{classServer_a7d4f27d5564e8be419476a5520f98667}} 
+\index{Server@{Server}!buffer@{buffer}}
+\index{buffer@{buffer}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily char Server\+::buffer\mbox{[}1024\mbox{]}}
+
+
+
+Definition at line 35 of file Server.\+h.
+
+\mbox{\Hypertarget{classServer_a7d328b1f5a9add79c661ec2b73824706}\label{classServer_a7d328b1f5a9add79c661ec2b73824706}} 
+\index{Server@{Server}!bufsize@{bufsize}}
+\index{bufsize@{bufsize}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{bufsize}{bufsize}}
+{\footnotesize\ttfamily int Server\+::bufsize = 1024}
+
+
+
+Definition at line 34 of file Server.\+h.
+
+\mbox{\Hypertarget{classServer_aeeaffddc4a50831765e2534f49626b62}\label{classServer_aeeaffddc4a50831765e2534f49626b62}} 
+\index{Server@{Server}!client@{client}}
+\index{client@{client}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily int Server\+::client}
+
+
+
+Definition at line 36 of file Server.\+h.
+
+\mbox{\Hypertarget{classServer_aa338e45a850b7524c0193d40f6e3a4ea}\label{classServer_aa338e45a850b7524c0193d40f6e3a4ea}} 
+\index{Server@{Server}!dataS@{dataS}}
+\index{dataS@{dataS}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{dataS}{dataS}}
+{\footnotesize\ttfamily Json\+::\+Value Server\+::dataS}
+
+
+
+Definition at line 38 of file Server.\+h.
+
+\mbox{\Hypertarget{classServer_aa0cb5785250bfe0bd984f3fe731085e2}\label{classServer_aa0cb5785250bfe0bd984f3fe731085e2}} 
+\index{Server@{Server}!reader@{reader}}
+\index{reader@{reader}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{reader}{reader}}
+{\footnotesize\ttfamily Json\+::\+Reader Server\+::reader}
+
+
+
+Definition at line 37 of file Server.\+h.
+
+\mbox{\Hypertarget{classServer_a9b92414f756151c727ae4136ef4c9963}\label{classServer_a9b92414f756151c727ae4136ef4c9963}} 
+\index{Server@{Server}!server@{server}}
+\index{server@{server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{server}{server}}
+{\footnotesize\ttfamily int Server\+::server}
+
+
+
+Definition at line 36 of file Server.\+h.
+
+\mbox{\Hypertarget{classServer_a52432b1665f62d7aed9fd5b1e74211fe}\label{classServer_a52432b1665f62d7aed9fd5b1e74211fe}} 
+\index{Server@{Server}!writer@{writer}}
+\index{writer@{writer}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{writer}{writer}}
+{\footnotesize\ttfamily Json\+::\+Styled\+Writer Server\+::writer}
+
+
+
+Definition at line 39 of file Server.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+TECFS/\mbox{\hyperlink{Server_8h}{Server.\+h}}\end{DoxyCompactItemize}

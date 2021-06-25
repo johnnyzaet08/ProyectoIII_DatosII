@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_12',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['mainwindow_13',['MainWindow',['../classMainWindow.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow']]]
+  ['agregar_95',['Agregar',['../classDisk.html#aed341b597373a4bf09da163e9bf98c06',1,'Disk']]]
 ];

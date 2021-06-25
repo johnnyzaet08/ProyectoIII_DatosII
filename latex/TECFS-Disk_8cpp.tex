@@ -1,0 +1,44 @@
+\hypertarget{TECFS-Disk_8cpp}{}\doxysection{TECFS/\+TECFS-\/\+Disk.cpp File Reference}
+\label{TECFS-Disk_8cpp}\index{TECFS/TECFS-\/Disk.cpp@{TECFS/TECFS-\/Disk.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include \char`\"{}Server.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{TECFS-Disk_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TECFS-Disk_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TECFS-Disk_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TECFS-\/Disk.cpp@{TECFS-\/Disk.cpp}!main@{main}}
+\index{main@{main}!TECFS-\/Disk.cpp@{TECFS-\/Disk.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file TECFS-\/\+Disk.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7           \{}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \textcolor{keywordtype}{int} puerto = 10010;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \mbox{\hyperlink{classServer}{Server}} *Servidor = \textcolor{keyword}{new} \mbox{\hyperlink{classServer}{Server}}(puerto);}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     std::string text, revisar, textSalida, puntero;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{16         textSalida = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{17         }
+\DoxyCodeLine{18         text = Servidor-\/>\mbox{\hyperlink{classServer_a20d861925cd7b91c065ce60d0c6ed62f}{Recibir}}();}
+\DoxyCodeLine{19         Servidor-\/>\mbox{\hyperlink{classServer_afa0e8ff8ed3d0e062d984a9370183a4a}{Enviar}}(textSalida);}
+\DoxyCodeLine{20     \}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}

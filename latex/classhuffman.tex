@@ -1,0 +1,91 @@
+\hypertarget{classhuffman}{}\doxysection{huffman Class Reference}
+\label{classhuffman}\index{huffman@{huffman}}
+
+
+{\ttfamily \#include $<$huffman.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhuffman_af944f02ee0bced925b81a9f918f9db65}{huffman}} (string in\+File\+Name, string out\+File\+Name)
+\item 
+void \mbox{\hyperlink{classhuffman_a234375497022ea32f1f60c343aa24596}{compress}} ()
+\item 
+void \mbox{\hyperlink{classhuffman_a7f2233ac8b06790e50a9e5f67f49f840}{decompress}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 22 of file huffman.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classhuffman_af944f02ee0bced925b81a9f918f9db65}\label{classhuffman_af944f02ee0bced925b81a9f918f9db65}} 
+\index{huffman@{huffman}!huffman@{huffman}}
+\index{huffman@{huffman}!huffman@{huffman}}
+\doxysubsubsection{\texorpdfstring{huffman()}{huffman()}}
+{\footnotesize\ttfamily huffman\+::huffman (\begin{DoxyParamCaption}\item[{string}]{in\+File\+Name,  }\item[{string}]{out\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 77 of file huffman.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78         \{}
+\DoxyCodeLine{79             this-\/>inFileName = inFileName;}
+\DoxyCodeLine{80             this-\/>outFileName = outFileName;}
+\DoxyCodeLine{81             createArr();}
+\DoxyCodeLine{82         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhuffman_a234375497022ea32f1f60c343aa24596}\label{classhuffman_a234375497022ea32f1f60c343aa24596}} 
+\index{huffman@{huffman}!compress@{compress}}
+\index{compress@{compress}!huffman@{huffman}}
+\doxysubsubsection{\texorpdfstring{compress()}{compress()}}
+{\footnotesize\ttfamily void huffman\+::compress (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 236 of file huffman.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{236                        \{}
+\DoxyCodeLine{237     createMinHeap();}
+\DoxyCodeLine{238     createTree();}
+\DoxyCodeLine{239     createCodes();}
+\DoxyCodeLine{240     saveEncodedFile();}
+\DoxyCodeLine{241 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classhuffman_a7f2233ac8b06790e50a9e5f67f49f840}\label{classhuffman_a7f2233ac8b06790e50a9e5f67f49f840}} 
+\index{huffman@{huffman}!decompress@{decompress}}
+\index{decompress@{decompress}!huffman@{huffman}}
+\doxysubsubsection{\texorpdfstring{decompress()}{decompress()}}
+{\footnotesize\ttfamily void huffman\+::decompress (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 243 of file huffman.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{243                          \{}
+\DoxyCodeLine{244     getTree();}
+\DoxyCodeLine{245     saveDecodedFile();}
+\DoxyCodeLine{246 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+TECFS/\+Huffman/\mbox{\hyperlink{huffman_8hpp}{huffman.\+hpp}}\item 
+TECFS/\+Huffman/\mbox{\hyperlink{huffman_8cpp}{huffman.\+cpp}}\end{DoxyCompactItemize}
