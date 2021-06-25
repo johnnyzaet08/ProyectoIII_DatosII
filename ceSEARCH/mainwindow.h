@@ -1,3 +1,11 @@
+/**
+  * @file mainwindow.h
+  * @author Ignacio Morales
+  * @brief App ceSearch
+  * @version 1.1
+  * @date 2021-06-24
+  */
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -16,6 +24,9 @@ public:
     ~MainWindow();
 
 private slots:
+    /**
+     * @brief realiza busqueda en libros y muestra el texto de los libros que corresponda
+     */
     void on_searchButton_clicked();
 
 private:
