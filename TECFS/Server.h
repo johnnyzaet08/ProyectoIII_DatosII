@@ -20,9 +20,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <jsoncpp/json/value.h>
-#include <jsoncpp/json/json.h>
-#include <map>
 
 /**
  * @brief Create the socket server and de logic of the send a receive menssage
@@ -34,10 +31,7 @@ class Server{
         int bufsize = 1024;
         char buffer[1024];
         int client, server;
-        Json::Reader reader;
-        Json::Value dataS;
-        Json::StyledWriter writer;
-
+        
     //Constructor
     Server(int port){
         struct sockaddr_in server_addr;
@@ -73,8 +67,6 @@ class Server{
             std::cout << "=> Error aceptando el cliente" << std::endl;
 
         std::cout << "=> Conectado con el cliente #" << clientCount << std::endl;
-        strcpy(buffer, "=> Server connected...\n");
-        send(server, buffer, bufsize, 0);
 
     }
 
@@ -105,9 +97,7 @@ std::string Server::Recibir(){
 void Server::Enviar(std::string text){
     int bufsizeS = 1024;
     char bufferS[1024];
-    reader.parse(text, dataS);
-    std::string data = writer.write(dataS);
-    std::copy(data.begin(), data.end(), bufferS);
+    std::copy(text.begin(), text.end(), bufferS);
     send(server, bufferS, bufsizeS, 0);
 }
 

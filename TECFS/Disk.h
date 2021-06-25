@@ -15,7 +15,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <memory.h>
-#include "block.h"
+#include "Block.h"
 
 /**
  * @brief Crea el disco y sus bloques para almacenar datos

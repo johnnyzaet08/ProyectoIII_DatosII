@@ -31,11 +31,12 @@
 class Client{
     public:
         int client;
-        int portNum = 10500;
+        int portNum;
         const char* ip = "127.0.0.1";
     
     //Constructor
-    Client(){
+    Client(int puerto){
+    	portNum = puerto;
         struct sockaddr_in server_addr;
         client = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -55,9 +56,23 @@ class Client{
     }
 
     //Metodos
+    std::string Recibir();
     void Enviar(std::string);
 
 };
+
+/**
+ * @brief Receive the menssage of the client socket
+ *  
+ * @return text that receive
+ */
+std::string Client::Recibir(){
+    int bufsizeR = 1024;
+    char bufferR[1024];
+    recv(client, bufferR, bufsizeR, 0);
+    std::string text = bufferR;
+    return text;
+}
 
 /**
  * @brief send the menssage of the server
